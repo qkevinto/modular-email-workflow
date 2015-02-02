@@ -1,0 +1,21 @@
+/* # Footer Responsive
+ * ---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 480px) {
+
+  /**
+   * @tab Mobile Styles
+   * @section footer text
+   * @tip Make the body content text larger in size for better readability on small screens.
+   */
+  .footerContent {
+    /*@editable*/ font-size: 14px !important;
+    /*@editable*/ line-height: 115% !important;
+  }
+
+  /* Place footer social and utility links on their own lines, for easier access */
+  .footerContent a {
+    display: block !important;
+  }
+
+}

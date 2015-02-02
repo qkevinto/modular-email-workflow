@@ -1,0 +1,84 @@
+/* # Columns
+ * ---------------------------------------------------------------------------------------------------- */
+
+.templateColumnContainer {
+  width: 260px;
+}
+
+/**
+ * @tab Columns
+ * @section column style
+ * @tip Set the background color and borders for your email's column area.
+ */
+#templateColumns {
+  /*@editable*/ background-color: #F4F4F4;
+  /*@editable*/ border-top: 1px solid #FFFFFF;
+  /*@editable*/ border-bottom: 1px solid #CCCCCC;
+}
+
+/**
+ * @tab Columns
+ * @section left column text
+ * @tip Set the styling for your email's left column content text. Choose a size and color that is easy to read.
+ */
+.leftColumnContent {
+  /*@editable*/ color: #505050;
+  /*@editable*/ font-family: Helvetica;
+  /*@editable*/ font-size: 14px;
+  /*@editable*/ line-height: 150%;
+  padding-top: 0;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  /*@editable*/ text-align: left;
+}
+
+/**
+ * @tab Columns
+ * @section left column link
+ * @tip Set the styling for your email's left column content links. Choose a color that helps them stand out from your text.
+ */
+.leftColumnContent a:link,
+.leftColumnContent a:visited, /* Yahoo! Mail Override */
+.leftColumnContent a .yshortcuts /* Yahoo! Mail Override */ {
+  /*@editable*/ color: #EB4102;
+  /*@editable*/ font-weight: normal;
+  /*@editable*/ text-decoration: underline;
+}
+
+/**
+ * @tab Columns
+ * @section right column text
+ * @tip Set the styling for your email's right column content text. Choose a size and color that is easy to read.
+ */
+.rightColumnContent {
+  /*@editable*/ color: #505050;
+  /*@editable*/ font-family: Helvetica;
+  /*@editable*/ font-size: 14px;
+  /*@editable*/ line-height: 150%;
+  padding-top: 0;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  /*@editable*/ text-align: left;
+}
+
+/**
+ * @tab Columns
+ * @section right column link
+ * @tip Set the styling for your email's right column content links. Choose a color that helps them stand out from your text.
+ */
+.rightColumnContent a:link,
+.rightColumnContent a:visited, /* Yahoo! Mail Override */
+.rightColumnContent a .yshortcuts /* Yahoo! Mail Override */ {
+  /*@editable*/ color: #EB4102;
+  /*@editable*/ font-weight: normal;
+  /*@editable*/ text-decoration: underline;
+}
+
+.leftColumnContent img,
+.rightColumnContent img {
+  display: inline;
+  height: auto;
+  max-width: 260px;
+}

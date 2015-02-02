@@ -1,0 +1,55 @@
+/* # Page Responsive
+ * ---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 480px) {
+
+  /**
+   * @tab Mobile Styles
+   * @section template width
+   * @tip Make the template fluid for portrait or landscape view adaptability. If a fluid layout doesn't work for you, set the width to 300px instead.
+   */
+  #templateContainer {
+    max-width: 600px !important;
+    /*@editable*/ width: 100% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section heading 1
+   * @tip Make the first-level headings larger in size for better readability on small screens.
+   */
+  h1 {
+    /*@editable*/ font-size: 24px !important;
+    /*@editable*/ line-height: 100% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section heading 2
+   * @tip Make the second-level headings larger in size for better readability on small screens.
+   */
+  h2 {
+    /*@editable*/ font-size: 20px !important;
+    /*@editable*/ line-height: 100% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section heading 3
+   * @tip Make the third-level headings larger in size for better readability on small screens.
+   */
+  h3 {
+    /*@editable*/ font-size: 18px !important;
+    /*@editable*/ line-height: 100% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section heading 4
+   * @tip Make the fourth-level headings larger in size for better readability on small screens.
+   */
+  h4 {
+    /*@editable*/ font-size: 16px !important;
+    /*@editable*/ line-height: 100% !important;
+  }
+}

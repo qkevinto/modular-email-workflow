@@ -1,0 +1,50 @@
+/* # Body
+ * ---------------------------------------------------------------------------------------------------- */
+
+/**
+ * @tab Body
+ * @section body style
+ * @tip Set the background color and borders for your email's body area.
+ */
+#templateBody {
+  /*@editable*/ background-color: #F4F4F4;
+  /*@editable*/ border-top: 1px solid #FFFFFF;
+  /*@editable*/ border-bottom: 1px solid #CCCCCC;
+}
+
+/**
+ * @tab Body
+ * @section body text
+ * @tip Set the styling for your email's main content text. Choose a size and color that is easy to read.
+ * @theme main
+ */
+.bodyContent {
+  /*@editable*/ color: #505050;
+  /*@editable*/ font-family: Helvetica;
+  /*@editable*/ font-size: 16px;
+  /*@editable*/ line-height: 150%;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  /*@editable*/ text-align: left;
+}
+
+/**
+* @tab Body
+* @section body link
+* @tip Set the styling for your email's main content links. Choose a color that helps them stand out from your text.
+*/
+.bodyContent a:link,
+.bodyContent a:visited, /* Yahoo! Mail Override */
+.bodyContent a .yshortcuts /* Yahoo! Mail Override */ {
+  /*@editable*/ color: #EB4102;
+  /*@editable*/ font-weight: normal;
+  /*@editable*/ text-decoration: underline;
+}
+
+.bodyContent img {
+  display: inline;
+  height: auto;
+  max-width: 560px;
+}

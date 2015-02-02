@@ -1,0 +1,23 @@
+/* # Client Specific Responsive
+ * ---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 480px) {
+
+  /* Prevent Webkit platforms from changing default text sizes */
+  body,
+  table,
+  td,
+  p,
+  a,
+  li,
+  blockquote {
+    -webkit-text-size-adjust: none !important;
+  }
+
+  /* Prevent iOS Mail from adding padding to the body */
+  body {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+}

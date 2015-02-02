@@ -1,0 +1,42 @@
+/* # Column Responsive
+ * ---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 480px) {
+
+  .templateColumnContainer {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section column image
+   * @tip Make the column image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
+   */
+  .columnImage{
+    height: auto !important;
+    /*@editable*/ max-width: 480px !important;
+    /*@editable*/ width: 100% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section left column text
+   * @tip Make the left column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+   */
+  .leftColumnContent {
+    /*@editable*/ font-size: 16px !important;
+    /*@editable*/ line-height: 125% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section right column text
+   * @tip Make the right column content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+   */
+  .rightColumnContent {
+    /*@editable*/ font-size: 16px !important;
+    /*@editable*/ line-height: 125% !important;
+  }
+
+}

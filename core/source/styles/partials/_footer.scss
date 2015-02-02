@@ -1,0 +1,45 @@
+/* # Footer
+ * ---------------------------------------------------------------------------------------------------- */
+
+/**
+ * @tab Footer
+ * @section footer style
+ * @tip Set the background color and borders for your email's footer area.
+ * @theme footer
+ */
+#templateFooter {
+  /*@editable*/ background-color: #F4F4F4;
+  /*@editable*/ border-top: 1px solid #FFFFFF;
+}
+
+/**
+ * @tab Footer
+ * @section footer text
+ * @tip Set the styling for your email's footer text. Choose a size and color that is easy to read.
+ * @theme footer
+ */
+.footerContent {
+  /*@editable*/ color: #808080;
+  /*@editable*/ font-family: Helvetica;
+  /*@editable*/ font-size: 10px;
+  /*@editable*/ line-height: 150%;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  /*@editable*/ text-align: left;
+}
+
+/**
+ * @tab Footer
+ * @section footer link
+ * @tip Set the styling for your email's footer links. Choose a color that helps them stand out from your text.
+ */
+.footerContent a:link,
+.footerContent a:visited, /* Yahoo! Mail Override */
+.footerContent a .yshortcuts,
+.footerContent a span /* Yahoo! Mail Override */ {
+  /*@editable*/ color: #606060;
+  /*@editable*/ font-weight: normal;
+  /*@editable*/ text-decoration: underline;
+}

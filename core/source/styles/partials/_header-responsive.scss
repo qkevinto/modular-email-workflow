@@ -1,0 +1,32 @@
+/* # Header Responsive
+ * ---------------------------------------------------------------------------------------------------- */
+
+@media only screen and (max-width: 480px) {
+
+  /* Hide the template preheader to save space */
+  #templatePreheader {
+    display:none !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section header image
+   * @tip Make the main header image fluid for portrait or landscape view adaptability, and set the image's original width as the max-width. If a fluid setting doesn't work, set the image width to half its original size instead.
+   */
+  #headerImage {
+    height: auto !important;
+    /*@editable*/ max-width: 600px !important;
+    /*@editable*/ width: 100% !important;
+  }
+
+  /**
+   * @tab Mobile Styles
+   * @section header text
+   * @tip Make the header content text larger in size for better readability on small screens. We recommend a font size of at least 16px.
+   */
+  .headerContent {
+    /*@editable*/ font-size: 20px !important;
+    /*@editable*/ line-height: 125% !important;
+  }
+
+}
