@@ -16,7 +16,7 @@ var paths = {
     },
     templates: {
         source: './source/templates/*.html',
-        dest: './dist/templates/',
+        dest: './dist/templates',
     },
     tmp: './.tmp/'
 };
@@ -28,7 +28,7 @@ var config = {
         startPath: '/templates'
     },
     nunjucks: {
-        templates: './source/templates/snippets/'
+        templates: './source/templates/snippets'
     }
 }
 
@@ -36,9 +36,9 @@ plugins.nunjucksRender.nunjucks.configure([config.nunjucks.templates]);
 
 /* Setup */
 gulp.task('setup', function() {
-    if (!fs.existsSync('./source/')) {
+    if (!fs.existsSync('./source')) {
         return gulp.src('./core/source/**/*')
-        .pipe(gulp.dest('./source/'))
+        .pipe(gulp.dest('./source'))
     }
 })
 
@@ -79,7 +79,7 @@ gulp.task('build:templates-inlined', ['build:styles'], function() {
     .pipe(plugins.inlineCss({
         preserveMediaQueries: true,
     }))
-    .pipe(gulp.dest(paths.templates.dest + 'inlined'));
+    .pipe(gulp.dest(paths.templates.dest + '/inlined'));
 });
 
 /* Serve: Browser Sync */
@@ -99,7 +99,7 @@ gulp.task('serve:styles', function () {
     .pipe(plugins.sass({
         outputStyle: 'compressed'
     }))
-    .pipe(gulp.dest(paths.tmp + 'styles/'))
+    .pipe(gulp.dest(paths.tmp + '/styles'))
     .pipe(reload({stream:true}));
 });
 
@@ -107,14 +107,14 @@ gulp.task('serve:styles', function () {
 gulp.task('serve:nunjucks-gen', function() {
     return gulp.src(paths.templates.source)
     .pipe(plugins.nunjucksRender())
-    .pipe(gulp.dest(paths.tmp + 'templates/'));
+    .pipe(gulp.dest(paths.tmp + '/templates'));
 });
 
 /* Serve: Watch */
 gulp.task('serve:watch', function() {
     gulp.watch(paths.styles.source, ['serve:styles']);
     gulp.watch(paths.templates.source, ['serve:nunjucks-gen', browserSync.reload]);
-    gulp.watch(config.nunjucks.templates + '**/*.html', ['serve:nunjucks-gen', browserSync.reload]);
+    gulp.watch(config.nunjucks.templates + '/**/*.html', ['serve:nunjucks-gen', browserSync.reload]);
 })
 
 /* Serve */
