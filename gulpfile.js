@@ -16,8 +16,7 @@ var paths = {
     },
     templates: {
         source: './source/templates/*.html',
-        dest: './dist/templates',
-        destBare: './dist/templates/bare'
+        dest: './dist/templates/',
     },
     tmp: './.tmp/'
 };
@@ -69,18 +68,18 @@ gulp.task('build:styles', function () {
 gulp.task('build:templates', ['build:styles'], function() {
     return gulp.src(paths.templates.source)
     .pipe(plugins.nunjucksRender())
-    .pipe(plugins.inlineCss({
-        preserveMediaQueries: true,
-    }))
+    .pipe(plugins.inlineSource())
     .pipe(gulp.dest(paths.templates.dest));
 });
 
-/* Build: Templates Bare */
-gulp.task('build:templates-bare', ['build:styles'], function() {
+/* Build: Templates Inlined */
+gulp.task('build:templates-inlined', ['build:styles'], function() {
     return gulp.src(paths.templates.source)
     .pipe(plugins.nunjucksRender())
-    .pipe(plugins.inlineSource())
-    .pipe(gulp.dest(paths.templates.destBare));
+    .pipe(plugins.inlineCss({
+        preserveMediaQueries: true,
+    }))
+    .pipe(gulp.dest(paths.templates.dest + 'inlined'));
 });
 
 /* Serve: Browser Sync */
@@ -129,7 +128,6 @@ gulp.task('serve', function(callback) {
         'serve:watch',
         callback
     );
-
 });
 
 /* Build */
@@ -138,7 +136,7 @@ gulp.task('build', function(callback) {
         'setup',
         'clean:dist',
         'build:templates',
-        'build:templates-bare'
+        'build:templates-inlined'
     );
 });
 
