@@ -111,6 +111,7 @@ gulp.task('serve:nunjucks-gen', function() {
     .pipe(gulp.dest(paths.tmp + 'templates/'));
 });
 
+/* Serve: Watch */
 gulp.task('serve:watch', function() {
     gulp.watch(paths.styles.source, ['serve:styles']);
     gulp.watch(paths.templates.source, ['serve:nunjucks-gen', browserSync.reload]);
