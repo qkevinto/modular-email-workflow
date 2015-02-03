@@ -79,7 +79,10 @@ gulp.task('build:templates-inlined', ['build:styles'], function() {
     return gulp.src(paths.templates.source)
     .pipe(plugins.nunjucksRender())
     .pipe(plugins.inlineCss({
-        preserveMediaQueries: true,
+        applyStyleTags: true,
+        removeStyleTags: false,
+        removeLinkTags: false,
+        preserveMediaQueries: true
     }))
     .pipe(gulp.dest(paths.templates.dest + '/inlined'));
 });
