@@ -22,7 +22,7 @@ Core template files are stored in `./core` (do not edit these). These will be co
 ```
 ├── source
     └── style/         # Styles
-      └── partials/  # Sass partials
+        └── partials/  # Sass partials
     └── templates/     # Templates
         └── snippets/  # Snippets, modular sections to include into templates
 ```
