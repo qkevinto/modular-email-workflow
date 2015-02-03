@@ -15,6 +15,16 @@ A simple modular email workflow that also supports MailChimp's template styling 
 1. `npm install` to install dependencies
 2. Run `gulp` to start serving templates with style injection and auto reload using a [BrowserSync](http://www.browsersync.io/) server
 
+## Gulp Tasks
+
+##### `gulp`
+
+Default task to start serving templates with style injection and auto reload using a [BrowserSync](http://www.browsersync.io/) server.
+
+##### `gulp build`
+
+Builds all `*.html` template files in `./source/templates` and placed into `./dist/templates` with styles preserved in header along with all comments and styles inlined into html elements.
+
 ## How it works
 
 ### Structure
