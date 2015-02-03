@@ -1,4 +1,4 @@
-# Gulp Modular Email Framework
+# Modular Email Workflow
 
 A simple modular email framework that supports MailChimp's template styling language by preserving styles in `<style></style>` tags and CSS comments.
 
