@@ -1,6 +1,6 @@
 # Modular Email Workflow
 
-A simple modular email workflow built with [`gulp`](https://www.npmjs.com/package/gulp) that also supports MailChimp's template styling language by preserving styles in `<style></style>` tag and CSS comments, and automatically inlining styles for compatibility.
+A simple modular email workflow built with [`gulp`](https://www.npmjs.com/package/gulp) that also supports MailChimp's [template styling language](http://templates.mailchimp.com/getting-started/template-language/) by preserving styles in `<style></style>` tag and CSS comments, and automatically inlining styles for compatibility.
 
 ## Features
 
