@@ -74,6 +74,7 @@ gulp.task('build:templates', ['build:styles'], function() {
         removeLinkTags: false,
         preserveMediaQueries: true
     }))
+    .pipe(plugins.htmlPrettify({indent_char: ' ', indent_size: 2}))
     .pipe(gulp.dest(paths.templates.dest));
 });
 
