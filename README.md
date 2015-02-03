@@ -1,6 +1,6 @@
 # Modular Email Workflow
 
-A simple modular email workflow that also supports MailChimp's template styling language by preserving styles in `<style></style>` tag and CSS comments, and automatically inlining styles for compatibility.
+A simple modular email workflow built with [`gulp`](https://www.npmjs.com/package/gulp) that also supports MailChimp's template styling language by preserving styles in `<style></style>` tag and CSS comments, and automatically inlining styles for compatibility.
 
 ## Features
 
@@ -40,6 +40,8 @@ Core template files are stored in `./core/source` (don't edit these). Core templ
 ```
 
 ### Snippets
+
+Snippets keep your template modularised and allow for consistent repeatable structures.
 
 Snippets can be included into templates using [nunjucks](http://mozilla.github.io/nunjucks/)' include syntax:
 
