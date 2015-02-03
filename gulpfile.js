@@ -59,7 +59,7 @@ gulp.task('clean', ['clean:dist', 'clean:tmp']);
 gulp.task('build:styles', function () {
     return gulp.src(paths.styles.source)
     .pipe(plugins.sass({
-        outputStyle: 'compressed'
+        outputStyle: 'nested'
     }))
     .pipe(gulp.dest(paths.styles.dest));
 });
@@ -68,7 +68,9 @@ gulp.task('build:styles', function () {
 gulp.task('build:templates', ['build:styles'], function() {
     return gulp.src(paths.templates.source)
     .pipe(plugins.nunjucksRender())
-    .pipe(plugins.inlineSource())
+    .pipe(plugins.inlineSource({
+        compress: false
+    }))
     .pipe(gulp.dest(paths.templates.dest));
 });
 
