@@ -43,4 +43,4 @@ Styles are stored in `./source/styles`, and organised into partials in `./source
 
 CSS is linked to templates with `<link inline rel="stylesheet" href="../styles/main.css" />` in template header. Link tags will be resolved and styles automatically injected and inlined by [`gulp-inline-css`](https://www.npmjs.com/package/gulp-inline-css) when `gulp build` is executed.
 
-Go build templates run `gulp build`. Built template `*.html` files will be in stored `./dist/templates`. Templates will have styles in header along with all comments and styles inlined into respective html elements.
+To build templates run `gulp build`. Built template `*.html` files will be in stored `./dist/templates`. Templates will have styles in header along with all comments and styles inlined into respective html elements.
