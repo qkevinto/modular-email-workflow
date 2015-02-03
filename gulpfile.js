@@ -68,23 +68,13 @@ gulp.task('build:styles', function () {
 gulp.task('build:templates', ['build:styles'], function() {
     return gulp.src(paths.templates.source)
     .pipe(plugins.nunjucksRender())
-    .pipe(plugins.inlineSource({
-        compress: false
-    }))
-    .pipe(gulp.dest(paths.templates.dest));
-});
-
-/* Build: Templates Inlined */
-gulp.task('build:templates-inlined', ['build:styles'], function() {
-    return gulp.src(paths.templates.source)
-    .pipe(plugins.nunjucksRender())
     .pipe(plugins.inlineCss({
         applyStyleTags: true,
         removeStyleTags: false,
         removeLinkTags: false,
         preserveMediaQueries: true
     }))
-    .pipe(gulp.dest(paths.templates.dest + '/inlined'));
+    .pipe(gulp.dest(paths.templates.dest));
 });
 
 /* Serve: Browser Sync */
@@ -140,8 +130,7 @@ gulp.task('build', function(callback) {
     runSequence(
         'setup',
         'clean:dist',
-        'build:templates',
-        'build:templates-inlined'
+        'build:templates'
     );
 });
 
