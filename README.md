@@ -65,3 +65,7 @@ CSS is linked to templates with `<link inline rel="stylesheet" href="../styles/m
 ### Building
 
 To build templates run `gulp build`. All `*.html` template files in `./source/templates` will be built and placed into `./dist/templates`. Templates will have styles in header along with all comments and styles inlined into respective html elements for best compatibility.
+
+====
+
+Released under the [MIT License](LICENSE). © Kevin To (http://kevinto.me)
