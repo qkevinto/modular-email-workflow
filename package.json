@@ -1,20 +1,21 @@
 {
-  "name": "edm-templates",
+  "name": "modular-email-workflow",
   "version": "1.0.0",
-  "description": "EDM Templates",
+  "description": "A simple modular email workflow built with gulp that also supports MailChimp's template styling language",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:infasecure/edm-templates.git"
+    "url": "git@github.com:qkevinto/modular-email-workflow.git"
   },
   "keywords": [
-    "EDM",
-    "Templates"
+    "email",
+    "modular",
+    "mailchimp"
   ],
-  "author": "InfaSecure",
-  "license": "ISC",
+  "author": "Kevin To",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^1.9.1",
     "del": "^1.1.1",
