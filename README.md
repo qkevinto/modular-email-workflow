@@ -4,8 +4,6 @@ A simple modular email workflow built with [`gulp`](https://www.npmjs.com/packag
 
 ## Features
 
-- [`gulp`](https://www.npmjs.com/package/gulp)
-- [`gulp-sass`](https://www.npmjs.com/package/gulp-sass)
 - Supports MailChimp template styling language
 - Two basic responsive templates from [MailChimp Email Blueprints](https://github.com/mailchimp/Email-Blueprints) are included and modularised, add any of your own template if needed
 - Simple modular templating using [`gulp-nunjucks-render`](https://www.npmjs.com/package/gulp-nunjucks-render)
@@ -13,23 +11,11 @@ A simple modular email workflow built with [`gulp`](https://www.npmjs.com/packag
 ## Getting started
 
 1. `npm install` to install dependencies
-2. Run `gulp` to start serving templates with style injection and auto reload using a [BrowserSync](http://www.browsersync.io/) server
-
-## Gulp Tasks
-
-##### `gulp`
-
-Default task to start serving templates with style injection and auto reload using a [BrowserSync](http://www.browsersync.io/) server.
-
-##### `gulp build`
-
-Builds all `*.html` template files in `./source/templates` and placed into `./dist/templates` with styles preserved in header along with all comments and styles inlined into html elements.
+2. Run `npm start` to start serving templates with style injection and auto reload using a [BrowserSync](http://www.browsersync.io/) server or `npm build` to just simply build the templates
 
 ## How it works
 
 ### Structure
-
-Core template files are stored in `./core/source` (don't edit these). Core template files will be copied to `./source` for editing, the first time `gulp` or `gulp build` tasks are executed:
 
 ```
 ├── source
@@ -64,7 +50,7 @@ CSS is linked to templates with `<link inline rel="stylesheet" href="../styles/m
 
 ### Building
 
-To build templates run `gulp build`. All `*.html` template files in `./source/templates` will be built and placed into `./dist/templates`. Templates will have styles in header along with all comments and styles inlined into respective html elements for best compatibility.
+To build templates run `npm build`. All `*.html` template files in `./source/templates` will be built and placed into `./dist/templates`. Templates will have styles in header along with all comments and styles inlined into respective html elements for best compatibility.
 
 ====
 
