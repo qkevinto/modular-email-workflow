@@ -1,14 +1,13 @@
 /* Modules */
-var gulp           = require('gulp');
-var del            = require('del');
-var browserSync    = require('browser-sync');
-var reload         = browserSync.reload;
-var plugins        = require('gulp-load-plugins')();
-var runSequence    = require('run-sequence');
-var fs             = require('fs');
+const gulp = require('gulp');
+const del = require('del');
+const browserSync = require('browser-sync');
+const reload = browserSync.reload;
+const plugins = require('gulp-load-plugins')();
+const runSequence = require('run-sequence');
 
 /* Paths */
-var paths = {
+const paths = {
     dist: './dist',
     styles: {
         source: './source/styles/**/*.scss',
@@ -22,35 +21,25 @@ var paths = {
 };
 
 /* Config */
-var config = {
+const config = {
     browserSync: {
         baseDir: './.tmp',
         startPath: '/templates'
     },
     nunjucks: {
-        templates: './source/templates/snippets'
+        path: ['./source/templates/snippets']
     }
 }
-
-plugins.nunjucksRender.nunjucks.configure([config.nunjucks.templates]);
-
-/* Setup */
-gulp.task('setup', function() {
-    if (!fs.existsSync('./source')) {
-        return gulp.src('./core/source/**/*')
-        .pipe(gulp.dest('./source'))
-    }
-})
 
 /* Clean: Dist */
 gulp.task('clean:dist', function() {
     return del(paths.dist);
-})
+});
 
 /* Clean: Tmp */
 gulp.task('clean:tmp', function() {
     return del(paths.tmp);
-})
+});
 
 /* Clean */
 gulp.task('clean', ['clean:dist', 'clean:tmp']);
@@ -67,7 +56,7 @@ gulp.task('build:styles', function () {
 /* Build: Templates */
 gulp.task('build:templates', ['build:styles'], function() {
     return gulp.src(paths.templates.source)
-    .pipe(plugins.nunjucksRender())
+    .pipe(plugins.nunjucksRender(config.nunjucks))
     .pipe(plugins.inlineCss({
         applyStyleTags: true,
         removeStyleTags: false,
@@ -102,7 +91,7 @@ gulp.task('serve:styles', function () {
 /* Serve: Nunjucks Gen */
 gulp.task('serve:nunjucks-gen', function() {
     return gulp.src(paths.templates.source)
-    .pipe(plugins.nunjucksRender())
+    .pipe(plugins.nunjucksRender(config.nunjucks))
     .pipe(gulp.dest(paths.tmp + '/templates'));
 });
 
@@ -111,12 +100,11 @@ gulp.task('serve:watch', function() {
     gulp.watch(paths.styles.source, ['serve:styles']);
     gulp.watch(paths.templates.source, ['serve:nunjucks-gen', browserSync.reload]);
     gulp.watch(config.nunjucks.templates + '/**/*.html', ['serve:nunjucks-gen', browserSync.reload]);
-})
+});
 
 /* Serve */
 gulp.task('serve', function(callback) {
     runSequence(
-        'setup',
         'clean:tmp',
         'serve:styles',
         'serve:nunjucks-gen',
@@ -129,7 +117,6 @@ gulp.task('serve', function(callback) {
 /* Build */
 gulp.task('build', function(callback) {
     runSequence(
-        'setup',
         'clean:dist',
         'build:templates'
     );
